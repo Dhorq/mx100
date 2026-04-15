@@ -12,6 +12,7 @@
 | freelancer | Get job, apply job|
 
 ## API Endpoints
+Documentation: https://documenter.getpostman.com/view/48837321/2sBXqCQPZK
 Base URL: http://localhost:8000/api
 
 ### Authentication
@@ -37,7 +38,10 @@ POST /api/login
     "password": "..."
 }
 
-### Jobs (Bearer Token required)
+#### Logout
+POST /api/logout
+
+### Jobs and Applications (Bearer Token required)
 | Method | Endpoint | Role | Description |
 |--------|----------|------|-------------|
 | POST | /jobs | employer | Create job |
@@ -48,6 +52,7 @@ POST /api/login
 | POST | /jobs/{id}/apply | freelancer | Apply (form-data: cv file) |
 
 ## Setup
+```bash
 composer install
 cp .env.example .env
 php artisan key:generate
